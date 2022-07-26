@@ -1,0 +1,6 @@
+# Used for submitting a tweet
+tweepy
+# Used to fetch data from some api
+requests
+# Used for logging, tracing and metrics
+aws-lambda-powertools
