@@ -1,6 +1,8 @@
 # Cardiff Twitter Bot
 
-Create a simple serverless bot that publishes news for the Cardiff area
+Create a simple serverless bot that publishes news for the Cardiff area. 
+
+Read [CDK Guide](cdk/README.md) on how to deploy to your own account.
 
 ## TODO
 
@@ -13,9 +15,10 @@ Create a simple serverless bot that publishes news for the Cardiff area
 - [x] Create basic CDK app that builds and deploys the lambda with lambda layer
 - [x] Test initial version via console
 - [x] Add logic to fetch credentials from parameter store
-- [ ] Add logic to scrape news and tweet
-- [ ] Add basic docs
-- [ ] Add architecture docs
-- [ ] Add tracing, logs and metrics
-- [ ] Add some unit testing
+- [x] Add logic to scrape news and tweet
+- [x] Add basic docs
+- [x] Add tracing, logs and metrics
 - [ ] Setup CI/CD
+- [ ] Add some unit testing
+- [ ] Add architecture docs
+- [ ] Final polish (add linting, formatters and security scans)

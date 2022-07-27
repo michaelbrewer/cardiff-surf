@@ -59,7 +59,7 @@ class CdkStack(Stack):
         credentials_path_arn = self.format_arn(
             service="ssm",
             resource="parameter",
-            resource_name="projects/cardiff/twitter",
+            resource_name="projects/cardiff/*",
         )
         function.role.add_to_principal_policy(
             aws_iam.PolicyStatement(
@@ -72,6 +72,6 @@ class CdkStack(Stack):
             self,
             "ScheduleBot",
             description="Run the Cardiff bot on an hourly basis",
-            schedule=aws_events.Schedule.cron(minute="0", hour="*"),
-            targets=[aws_events_targets.LambdaFunction(function)]
+            schedule=aws_events.Schedule.expression("cron(0 14,16,18,20,23,0,2 * * ? *)"),
+            targets=[aws_events_targets.LambdaFunction(function)],
         )
