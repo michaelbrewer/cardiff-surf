@@ -56,6 +56,7 @@ class CdkStack(Stack):
         key = aws_kms.Key.from_key_arn(self, "ssmKmsKey", ssm_kms_arn)
         key.grant_decrypt(function)
 
+        # Grant lambda access to twitter and stormglass credentials
         credentials_path_arn = self.format_arn(
             service="ssm",
             resource="parameter",
@@ -72,6 +73,6 @@ class CdkStack(Stack):
             self,
             "ScheduleBot",
             description="Run the Cardiff bot on an hourly basis",
-            schedule=aws_events.Schedule.expression("cron(0 14,16,18,20,23,0,2 * * ? *)"),
+            schedule=aws_events.Schedule.cron(hour="14,16,18,20,23,0,2", minute="0"),
             targets=[aws_events_targets.LambdaFunction(function)],
         )

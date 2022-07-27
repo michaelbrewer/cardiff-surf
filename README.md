@@ -20,5 +20,5 @@ Read [CDK Guide](cdk/README.md) on how to deploy to your own account.
 - [x] Add tracing, logs and metrics
 - [ ] Setup CI/CD
 - [ ] Add some unit testing
-- [ ] Add architecture docs
+- [ ] Add architecture docs (highlights IAC, Security, Patching, Cost, Reliabilty, Observability)
 - [ ] Final polish (add linting, formatters and security scans)

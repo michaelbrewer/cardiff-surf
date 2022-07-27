@@ -3,12 +3,11 @@ from typing import Any, Dict, List
 
 import requests
 import tweepy
-from aws_lambda_powertools import Tracer, Logger
+from aws_lambda_powertools import Tracer
 from aws_lambda_powertools.utilities.parameters import get_parameter
 from dateutil.parser import parse
 
 tracer = Tracer()
-logger = Logger()
 
 
 @tracer.capture_lambda_handler
@@ -47,14 +46,11 @@ def current_surf_report() -> str:
     response.raise_for_status
     result = response.json()
 
-    logger.debug(str(type(result)))
-    logger.trace(result)
-
     report = next_closest_time(result["hours"])
-    wave_height = report.get("waveHeight", {}).get("noaa", "N/A")
-    air_temp = report.get("airTemperature", {}).get("noaa", "N/A")
+    wave_height = report.get("waveHeight", {}).get("sg", "N/A")
+    air_temp = report.get("airTemperature", {}).get("sg", "N/A")
 
-    return f"Surf report: {wave_height}m wave height, air temp of {air_temp}c"
+    return f"Swami's Beach Report: {wave_height}m wave height, air temp of {air_temp}c"
 
 
 def next_closest_time(hours: List[Dict[str, Any]]) -> Dict[str, Any]:
