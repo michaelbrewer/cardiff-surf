@@ -1,5 +1,5 @@
 from datetime import datetime, timezone
-from typing import Any, Dict, List, cast
+from typing import Any, Dict, List, Union, cast
 
 import requests
 import tweepy  # type: ignore
@@ -35,15 +35,16 @@ def current_surf_report() -> str:
     stormglass_credential = cast(
         dict, get_parameter(name="/projects/cardiff/stormglass", transform="json", decrypt=True, max_age=60)
     )
+    payload: Dict[str, Union[float, str]] = {
+        # Swami's Beach location
+        "lat": 33.034140,
+        "lng": -117.293228,
+        "params": ",".join(["waveHeight", "airTemperature"]),
+    }
     response = requests.get(
         url="https://api.stormglass.io/v2/weather/point",
         headers={"Authorization": stormglass_credential["api_key"]},
-        params={  # type: ignore
-            # Swami's Beach location
-            "lat": 33.034140,
-            "lng": -117.293228,
-            "params": ",".join(["waveHeight", "airTemperature"]),
-        },
+        params=payload,
     )
     response.raise_for_status()
     result = response.json()
@@ -52,7 +53,10 @@ def current_surf_report() -> str:
     wave_height = report.get("waveHeight", {}).get("sg", "N/A")
     air_temp = report.get("airTemperature", {}).get("sg", "N/A")
 
-    return f"Swami's Beach Report: {wave_height}m wave height, air temp of {air_temp}c"
+    return f"""Swami's Beach Report:
+    - 🌊 {wave_height}m wave height
+    - 🌤 air temp of {air_temp}c
+    """
 
 
 def next_closest_time(hours: List[Dict[str, Any]]) -> Dict[str, Any]:
