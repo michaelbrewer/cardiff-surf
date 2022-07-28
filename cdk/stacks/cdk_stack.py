@@ -71,7 +71,7 @@ class CdkStack(Stack):
         aws_events.Rule(
             self,
             "ScheduleBot",
-            description="Run the Cardiff bot every 2 hourl",
+            description="Run the Cardiff bot every 2 hours",
             schedule=aws_events.Schedule.cron(hour="14,16,18,20,22,0,2", minute="0"),
             targets=[aws_events_targets.LambdaFunction(function)],
         )
