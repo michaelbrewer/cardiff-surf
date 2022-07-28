@@ -55,15 +55,16 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "constructs"
-version = "10.1.57"
+version = "10.1.59"
 description = "A programming model for software-defined state"
 category = "main"
 optional = false
 python-versions = "~=3.7"
 
 [package.dependencies]
-jsii = ">=1.62.0,<2.0.0"
+jsii = ">=1.63.1,<2.0.0"
 publication = ">=0.0.3"
+typeguard = ">=2.13.3,<2.14.0"
 
 [[package]]
 name = "exceptiongroup"
@@ -86,7 +87,7 @@ python-versions = "*"
 
 [[package]]
 name = "jsii"
-version = "1.62.0"
+version = "1.63.1"
 description = "Python client for jsii runtime"
 category = "main"
 optional = false
@@ -95,7 +96,9 @@ python-versions = "~=3.7"
 [package.dependencies]
 attrs = ">=21.2,<22.0"
 cattrs = ">=1.8,<22.2"
+publication = ">=0.0.3"
 python-dateutil = "*"
+typeguard = ">=2.13.3,<2.14.0"
 typing-extensions = ">=3.7,<5.0"
 
 [[package]]
@@ -197,6 +200,18 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "typeguard"
+version = "2.13.3"
+description = "Run-time type checker for Python"
+category = "main"
+optional = false
+python-versions = ">=3.5.3"
+
+[package.extras]
+doc = ["sphinx-rtd-theme", "sphinx-autodoc-typehints (>=1.2.0)"]
+test = ["pytest", "typing-extensions", "mypy"]
+
+[[package]]
 name = "typing-extensions"
 version = "4.3.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
@@ -230,8 +245,8 @@ colorama = [
     {file = "colorama-0.4.5.tar.gz", hash = "sha256:e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"},
 ]
 constructs = [
-    {file = "constructs-10.1.57-py3-none-any.whl", hash = "sha256:47f81adf55d6b1df2d40c0fc1be4e8442053e3f9225de2dc22882f3a212a1dc9"},
-    {file = "constructs-10.1.57.tar.gz", hash = "sha256:9bcb21d54d7cf1a1b5805cf7b4808832c5ab5ab3f7c445a78897f5cd00e38e3c"},
+    {file = "constructs-10.1.59-py3-none-any.whl", hash = "sha256:1f3c8a87f3d78df0502b6966cfa534c50fe10e6e4ad9a53e9bf8f28f85b895db"},
+    {file = "constructs-10.1.59.tar.gz", hash = "sha256:2d73f3c00eb72d9229d848e757b07f745483fcf7959ec0dad731ff55fe5fa02e"},
 ]
 exceptiongroup = [
     {file = "exceptiongroup-1.0.0rc8-py3-none-any.whl", hash = "sha256:ab0a968e1ef769e55d9a596f4a89f7be9ffedbc9fdefdb77cc68cf5c33ce1035"},
@@ -242,8 +257,8 @@ iniconfig = [
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
 ]
 jsii = [
-    {file = "jsii-1.62.0-py3-none-any.whl", hash = "sha256:d124b0f350fd206e0488d3bb83dc58832f11e64fc728fd3a10096872d8a3a938"},
-    {file = "jsii-1.62.0.tar.gz", hash = "sha256:c22ac7373260fbabdb012faba717a8a4dbd933120cee373905030fd66956a65a"},
+    {file = "jsii-1.63.1-py3-none-any.whl", hash = "sha256:1921cd0e84c180e160711c5c5caabc5ab17ab65a1640acd3f5e71e753e161501"},
+    {file = "jsii-1.63.1.tar.gz", hash = "sha256:e67d8887d8012e8e98b46ed120bffd062165765ced44eeb202fbb5c1b162bf40"},
 ]
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
@@ -280,6 +295,10 @@ six = [
 tomli = [
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
+]
+typeguard = [
+    {file = "typeguard-2.13.3-py3-none-any.whl", hash = "sha256:5e3e3be01e887e7eafae5af63d1f36c849aaa94e3a0112097312aabfa16284f1"},
+    {file = "typeguard-2.13.3.tar.gz", hash = "sha256:00edaa8da3a133674796cf5ea87d9f4b4c367d77476e185e80251cc13dfbb8c4"},
 ]
 typing-extensions = [
     {file = "typing_extensions-4.3.0-py3-none-any.whl", hash = "sha256:25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02"},
