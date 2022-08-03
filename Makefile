@@ -25,3 +25,6 @@ complexity-baseline:
 	poetry run xenon --max-absolute C --max-modules A --max-average A src
 
 pr: lint security-baseline complexity-baseline
+
+clean:
+	poetry env remove python3
