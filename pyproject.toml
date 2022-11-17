@@ -8,14 +8,14 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.9"
 # Used for submitting a tweet
-tweepy = "^4.10.1"
+tweepy = "^4.12.1"
 # Used to fetch data from some api
 requests = "^2.28.1"
 # Used for logging, tracing and metrics
-aws-lambda-powertools = "^1.31.0"
+aws-lambda-powertools = {version = "^2.2.0", extras=["tracer"]}
 
 [tool.poetry.dev-dependencies]
-black = "^22.6.0"
+black = "^22.10.0"
 isort = "^5.10.1"
 flake8 = "^5.0.4"
 flake8-black = "^0.3.3"
@@ -25,18 +25,18 @@ flake8-debugger = "^4.1.2"
 flake8-fixme = "^1.1.1"
 flake8-isort = "^5.0.0"
 flake8-variables-names = "^0.0.5"
-flake8-eradicate = "^1.2.1"
-flake8-bugbear = "^22.7.1"
-mypy = "^0.982"
+flake8-eradicate = "^1.4.0"
+flake8-bugbear = "^22.10.27"
+mypy = "^0.991"
 bandit = "^1.7.4"
 radon = "^5.1.0"
 xenon = "^0.9.0"
-pytest = "^7.1.2"
+pytest = "^7.2.0"
 pytest-cov = "^4.0.0"
-pytest-mock = "^3.8.2"
-moto = "^4.0.7"
-types-requests = "^2.28.5"
-types-python-dateutil = "^2.8.19"
+pytest-mock = "^3.10.0"
+moto = "^4.0.9"
+types-requests = "^2.28.11.5"
+types-python-dateutil = "^2.8.19.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
