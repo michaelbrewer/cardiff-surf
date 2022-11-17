@@ -7,7 +7,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-aws-cdk-lib = "^2.46.0"
+aws-cdk-lib = "^2.50.0"
 constructs = "^10.1.131"
 
 [tool.poetry.dev-dependencies]
