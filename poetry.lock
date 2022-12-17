@@ -14,7 +14,7 @@ tests-no-zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy 
 
 [[package]]
 name = "aws-lambda-powertools"
-version = "2.3.1"
+version = "2.4.0"
 description = "A suite of utilities for AWS Lambda functions to ease adopting best practices such as tracing, structured logging, custom metrics, batching, idempotency, feature flags, and more."
 category = "main"
 optional = false
@@ -943,7 +943,7 @@ python-versions = ">=3.4"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "176eb12bb6d14cb70ea11233c9bba8b9522eeaad519d69eac6728711232c2eab"
+content-hash = "2573dda8d9708867cf2b99788618c2bd378538b8dee1ad9a54e48094c0f83ab1"
 
 [metadata.files]
 attrs = [
@@ -951,8 +951,8 @@ attrs = [
     {file = "attrs-22.1.0.tar.gz", hash = "sha256:29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6"},
 ]
 aws-lambda-powertools = [
-    {file = "aws_lambda_powertools-2.3.1-py3-none-any.whl", hash = "sha256:660b0294f14e6e62e957dcda76583e8bfbbd0b02c97ca3963b861d6b3c7415f2"},
-    {file = "aws_lambda_powertools-2.3.1.tar.gz", hash = "sha256:05661b2ed6d442008415519ffd2a61a39a5484b40d2ec46e10ad9a8a08e0e82e"},
+    {file = "aws_lambda_powertools-2.4.0-py3-none-any.whl", hash = "sha256:7981eae02f68a15a9ac85c158d25cd7ef235a6c48c390774f15ae06d565524ed"},
+    {file = "aws_lambda_powertools-2.4.0.tar.gz", hash = "sha256:a7084df09105770a032893b203347625d219f93a4e5f2b5ad4dd3a8942983cc7"},
 ]
 aws-xray-sdk = [
     {file = "aws-xray-sdk-2.11.0.tar.gz", hash = "sha256:78835fc841f03e550858f18a9973eab8618f47f22d2f59edf130578fa545a867"},
